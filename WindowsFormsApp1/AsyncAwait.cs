@@ -13,7 +13,7 @@ namespace WindowsFormsApp1
 {
     
     public class ProgressReport
-    {
+    {//test
         public int DownloadedPercentage = 0;
         public string DownloadedPercentageDes = "";
     }
