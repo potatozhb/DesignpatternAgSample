@@ -28,9 +28,7 @@ namespace WindowsFormsApp1
         public async Task RunsyncTest(IProgress<ProgressReport> progress , CancellationTokenSource cancellationTokenSource)
         {
             SingletonPatternLog.ClearLog();
-            //hello
-            //hi
-
+        
             Stopwatch swt = Stopwatch.StartNew();
 
             try
