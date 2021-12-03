@@ -1,0 +1,37 @@
+Month	ProductSales	commends	Isgood
+01-Jan	271	this is good	Positive
+02-Jan	150.9	this is horrible	Bad
+03-Jan	188.1	it is average	Positive
+04-Jan	124.3	bad horrible	Bad
+05-Jan	185.3	well ok ok	Positive
+06-Jan	173.5	shitty terrible	Bad
+07-Jan	236.8	not bad	Positive
+08-Jan	229.5	cool nice	Positive
+09-Jan	197.8	sweet and nice	Positive
+10-Jan	127.9	nice and good	Positive
+11-Jan	341.5	shit	Bad
+12-Jan	190.9	bad and hell	Bad
+01-Feb	199.3	average and ok	Positive
+02-Feb	154.5	god horrible	Bad
+03-Feb	215.1	soooo nice	Positive
+04-Feb	278.3	soooo bad	Bad
+05-Feb	196.4	quite average	Positive
+06-Feb	292	very good	Positive
+07-Feb	231	this is good	Positive
+08-Feb	308.6	this is horrible	Bad
+09-Feb	294.9	it is average	Positive
+10-Feb	426.6	bad horrible	Bad
+11-Feb	269.5	well ok ok	Positive
+12-Feb	347.3	shitty terrible	Bad
+01-Mar	344.7	not bad	Positive
+02-Mar	445.4	cool nice	Positive
+03-Mar	320.9	sweet and nice	Positive
+04-Mar	444.3	nice and good	Positive
+05-Mar	406.3	shit	Bad
+06-Mar	442.4	bad and hell	Bad
+07-Mar	580.5	average and ok	Positive
+08-Mar	412.6	god horrible	Bad
+09-Mar	687	soooo nice	Positive
+10-Mar	480.3	soooo bad	Bad
+11-Mar	586.3	quite average	Positive
+12-Mar	651.9	very good	Positive
