@@ -52,6 +52,7 @@
             this.button18 = new System.Windows.Forms.Button();
             this.button19 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
+            this.button20 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -109,7 +110,7 @@
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(107, 23);
             this.button5.TabIndex = 5;
-            this.button5.Text = "StrongConnection";
+            this.button5.Text = "StronglyConnected";
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
@@ -274,11 +275,21 @@
             this.button10.UseVisualStyleBackColor = true;
             this.button10.Click += new System.EventHandler(this.button10_Click_1);
             // 
+            // button20
+            // 
+            this.button20.Location = new System.Drawing.Point(482, 413);
+            this.button20.Name = "button20";
+            this.button20.Size = new System.Drawing.Size(138, 23);
+            this.button20.TabIndex = 26;
+            this.button20.Text = "Dependency Injection";
+            this.button20.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1013, 565);
+            this.Controls.Add(this.button20);
             this.Controls.Add(this.button10);
             this.Controls.Add(this.button19);
             this.Controls.Add(this.button18);
@@ -334,6 +345,7 @@
         private System.Windows.Forms.Button button18;
         private System.Windows.Forms.Button button19;
         private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.Button button20;
     }
 }
 

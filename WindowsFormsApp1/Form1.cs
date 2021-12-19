@@ -15,6 +15,8 @@ using Microsoft.ML;
 
 namespace WindowsFormsApp1
 {
+
+
     public partial class Form1 : Form
     {
         SingletonPatternLog log;
@@ -54,6 +56,7 @@ namespace WindowsFormsApp1
 
             return logstr;
         }
+
 
         private void button1_Click(object sender, EventArgs e)
         {

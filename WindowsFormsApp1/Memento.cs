@@ -6,16 +6,26 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsApp1
 {
+
+
     public class OriginatorMemento
-    {
+    { 
         private MementoCare datacare;
 
         public OriginatorMemento()
         {
-            datacare = new MementoCare();
+            
+        
+        datacare = new MementoCare();
         }
         public void CreateMemento(MementoData newdata)
         {
+            var anonymousData = new
+            {
+                Firstname = "Joe",
+                Lastname = "Zhao",
+                age = 28
+            };
             datacare.SaveMementoData(newdata);
         }
 

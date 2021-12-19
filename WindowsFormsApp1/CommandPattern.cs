@@ -10,6 +10,8 @@ namespace WindowsFormsApp1
     {
         public void Play()
         {
+           
+
             TVDevice myTV = new TVDevice();
             TurnTVOn _TVon = new TurnTVOn(myTV);
 
@@ -55,6 +57,7 @@ namespace WindowsFormsApp1
         }
 
     }
+
     public interface ICommand
     {
         void Execute();

@@ -6,10 +6,12 @@ using System.Data.SqlClient;
 
 namespace MLModel1_ConsoleApp1
 {
+
     class Program
     {
         static void Main(string[] args)
-        {
+        { 
+
             string sqlConnection = "Server=tcp:joe-azure-server.database.windows.net,1433;Initial Catalog=SQLDatabaseJoe;Persist Security Info=False;User ID=potatozhb;Password=Zhao1980!@;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
 
             using (var conn = new SqlConnection(sqlConnection))
