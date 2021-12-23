@@ -1,12 +1,41 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
 using SearchQuestionAmazon;
+using System.Collections;
 
 class Program
 {
     static void Main(string[] args)
     {
         Console.WriteLine("Hello, World!");
+
+        Hashtable ht = new Hashtable();
+        ht.Add(1, 1);
+        ht.Add(2, 2);
+        ht.Add(3, 2);
+        ht[1] = 2;
+
+        foreach(var vv in ht.Values)
+        {
+            
+        }    
+        Console.WriteLine($"hashtable is {ht[1]}");
+
+        SubMatrixMaxSum subMatrixMaxSum = new SubMatrixMaxSum();
+
+        string s1 = "afccdd";
+        var sss = s1.Reverse();
+        string s2 = String.Join("", sss);
+
+        char[] cc = s2.ToArray();
+        Array.Sort(cc);
+
+        Console.WriteLine($"rem is {String.Join("",cc)}");
+
+        Console.WriteLine("===========================");
+
+        int b;
+        int a = Math.DivRem(16, 2, out b);
 
         ReversALinkList.BuildLink();
         Console.WriteLine($"{ReversALinkList.TravelThroughLink()}");
@@ -98,6 +127,8 @@ class Program
             output += list[i] + ",";
         }
         Console.WriteLine(output);
+
+        Console.ReadLine();
 
     }
 

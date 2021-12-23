@@ -27,7 +27,7 @@ namespace SearchQuestionAmazon
         {
             LinkNode pre = null;
 
-            while(root.NextNode != null)
+            while(root != null)
             {
                 LinkNode next = root.NextNode;
                 root.NextNode = pre;
@@ -36,7 +36,7 @@ namespace SearchQuestionAmazon
 
             }
             //last node
-            root.NextNode = pre;
+            root = pre;
         }
 
         public static string InsertNode(string data)
