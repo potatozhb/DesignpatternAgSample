@@ -1,19 +1,18 @@
-﻿
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
+using SearchQuestionAmazon;
 using System.Collections.Generic;
-using WindowsFormsApp1;
 
-namespace UnitTestProject1
+namespace NUnitTestProject1
 {
-    public class UnitTest1
+    public class Tests
     {
-
-        public void TestMethod1()
+        [SetUp]
+        public void Setup()
         {
-            Assert.Fail();
         }
 
-        public void TrieTest()
+        [Test]
+        public void TriesTest()
         {
             string ss = "dbcabcabddda";
             Tries tries = new Tries();
@@ -21,10 +20,11 @@ namespace UnitTestProject1
             tries.InsertNode("abd");
             tries.InsertNode("bbc");
 
-            List<string> slist = tries.Becontains(ss);
+            List<string> slist = tries.Search(ss);
 
-
+            
             Assert.AreEqual(1, slist.Count);
+            
         }
     }
 }
