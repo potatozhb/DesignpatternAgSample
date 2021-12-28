@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsApp1
 {
-    public abstract class ElectronicAbsBridgePattern
+    public abstract class Electronic
     {
         public abstract void PowerOn();
         public abstract void PowerOff();
@@ -17,7 +17,7 @@ namespace WindowsFormsApp1
         
     }
 
-    public class Television : ElectronicAbsBridgePattern
+    public class Television : Electronic
     {
 
         private bool isPowerOn = false;
@@ -95,10 +95,10 @@ namespace WindowsFormsApp1
         void ChannelDown();
     }
 
-    public class RemoteTVpause : interfaceRemote
+    public class RemoteTVpauseBridgePattern : interfaceRemote
     {
         Television myTV;
-        public RemoteTVpause(Television tv)
+        public RemoteTVpauseBridgePattern(Television tv)
         {
             this.myTV = tv;
         }

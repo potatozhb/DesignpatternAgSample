@@ -62,7 +62,7 @@ namespace WindowsFormsApp1
         {
 
             SingletonPatternLog.AddLog("Bridge Pattern");
-            RemoteTVpause remote = new RemoteTVpause(new Television(200));
+            RemoteTVpauseBridgePattern remote = new RemoteTVpauseBridgePattern(new Television(200));
             remote.PowerOn();
             remote.PowerOff();
             remote.VolumeUp();
@@ -383,6 +383,37 @@ namespace WindowsFormsApp1
 
         private void button20_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void button21_Click(object sender, EventArgs e)
+        {
+            AbstractFactoryTest abstractFactoryTest = new AbstractFactoryTest();
+            abstractFactoryTest.Run();
+        }
+
+        private void button22_Click(object sender, EventArgs e)
+        {
+            LazyInitializationPattern lazyInitializationPattern = new LazyInitializationPattern();
+            lazyInitializationPattern.Run();
+        }
+
+        private void button23_Click(object sender, EventArgs e)
+        {
+            ObjectPattern obj1 = ObjectPoolPattern.GetObject();
+            ObjectPattern obj2 = ObjectPoolPattern.GetObject();
+            ObjectPoolPattern.ReleaseObject(obj1);
+            ObjectPattern obj3 = ObjectPoolPattern.GetObject();
+            ObjectPattern obj4 = ObjectPoolPattern.GetObject();
+
+            ObjectPoolPattern.ReleaseObject(obj2);
+            ObjectPattern obj5 = ObjectPoolPattern.GetObject();
+            ObjectPattern obj6 = ObjectPoolPattern.GetObject();
+
+            ObjectPoolPattern.ReleaseObject(obj3);
+            ObjectPoolPattern.ReleaseObject(obj4);
+            ObjectPattern obj7 = ObjectPoolPattern.GetObject();
+            ObjectPattern obj8 = ObjectPoolPattern.GetObject();
 
         }
     }

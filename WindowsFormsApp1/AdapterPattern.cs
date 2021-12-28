@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsApp1
 {
+    /// <summary>
+    /// Robot to tank adapter
+    /// </summary>
     public class AdapterPattern:IWarWeapon
     {
         RobotKiller robot = new RobotKiller();

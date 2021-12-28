@@ -246,6 +246,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AbstractFactory.cs" />
     <Compile Include="AdapterPattern.cs" />
     <Compile Include="AsyncAwait.cs" />
     <Compile Include="BinarySearchTree.cs" />
@@ -261,8 +262,10 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="IteratorPattern.cs" />
+    <Compile Include="LazyInitializationPattern.cs" />
     <Compile Include="Memento.cs" />
     <Compile Include="MyHashTable.cs" />
+    <Compile Include="ObjectPoolPattern.cs" />
     <Compile Include="ObserverPattern.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
