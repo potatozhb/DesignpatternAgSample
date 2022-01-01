@@ -14,9 +14,7 @@ namespace WindowsFormsApp1
 
         public OriginatorMemento()
         {
-            
-        
-        datacare = new MementoCare();
+            datacare = new MementoCare();
         }
         public void CreateMemento(MementoData newdata)
         {
@@ -44,19 +42,6 @@ namespace WindowsFormsApp1
         public DateTime dateTime { get; set; }
     }
 
-    public class Memento
-    {
-        private MementoData data;
-        public Memento(MementoData newdata)
-        {
-            this.data = newdata;
-        }
-
-        public MementoData GetData()
-        {
-            return this.data;
-        }
-    }
 
     public class MementoCare
     {
@@ -95,13 +80,14 @@ namespace WindowsFormsApp1
 
         public void SaveMementoData(MementoData data)
         {
-            while (CurrentdataIndex != datas.Count -1)
+            while (CurrentdataIndex != datas.Count)
                 datas.RemoveAt(CurrentdataIndex);
 
             datas.Add(data);
-            CurrentdataIndex++;
 
             SingletonPatternLog.AddLog($"Save data #{ CurrentdataIndex} : datatime: {datas[CurrentdataIndex].dateTime.ToString()}");
+
+            CurrentdataIndex++;
         }
 
 

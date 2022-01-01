@@ -13,9 +13,9 @@ namespace WindowsFormsApp1
         public string age;
         public string weight;
 
-        public Flytype flytype;
+        public IFlytypeStrategy flytype;
 
-        public abstract void SetFly(Flytype ft);
+        public abstract void SetFly(IFlytypeStrategy ft);
         public abstract void Fly();
 
     }
@@ -32,7 +32,7 @@ namespace WindowsFormsApp1
             flytype.Fly();
         }
 
-        public override void SetFly(Flytype ft)
+        public override void SetFly(IFlytypeStrategy ft)
         {
             flytype = ft;
         }
@@ -49,18 +49,18 @@ namespace WindowsFormsApp1
             flytype.Fly();
         }
 
-        public override void SetFly(Flytype ft)
+        public override void SetFly(IFlytypeStrategy ft)
         {
             flytype = ft;
         }
     }
 
-    public interface Flytype
+    public interface IFlytypeStrategy
     {
         void Fly();
     }
 
-    public class canFly : Flytype
+    public class canFly : IFlytypeStrategy
     {
         public void Fly()
         {
@@ -68,7 +68,7 @@ namespace WindowsFormsApp1
         }
     }
 
-    public class notFly : Flytype
+    public class notFly : IFlytypeStrategy
     {
         public void Fly()
         {
@@ -76,7 +76,7 @@ namespace WindowsFormsApp1
         }
     }
 
-    public class sickFly : Flytype
+    public class sickFly : IFlytypeStrategy
     {
         public void Fly()
         {

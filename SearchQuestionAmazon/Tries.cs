@@ -1,8 +1,10 @@
-﻿using System;
+﻿using BenchmarkDotNet.Attributes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
 
 namespace SearchQuestionAmazon
 {
@@ -18,6 +20,7 @@ namespace SearchQuestionAmazon
         }
     }
 
+    [MemoryDiagnoser]
     public class Tries
     {
         private TreeNode root;
@@ -48,6 +51,63 @@ namespace SearchQuestionAmazon
 
         }
 
+
+        //[Benchmark]
+        public void YieldReturn()
+        {
+            IEnumerable<int> rs = YieldReturnTest();
+            foreach (int i in rs)
+            {
+                if (i< 100)
+                {
+                    int j = i;
+                }
+                else
+                {
+                    break;
+                }
+            }
+
+        }
+
+        //[Benchmark]
+        public void NormalReturn()
+        {
+            IEnumerable<int> rs = Test();
+            foreach (int i in rs)
+            {
+                if (i< 100)
+                {
+                    int j = i;
+                }
+                else
+                {
+                    break;
+                }
+            }
+
+        }
+
+        public IEnumerable<int> YieldReturnTest()
+        {
+            for (int i = 0; i<10000; i++)
+            {
+                yield return i;
+            }
+
+        }
+
+        public IEnumerable<int> Test()
+        {
+            List<int> list = new List<int>();
+            for (int i=0; i<10000;i++)
+            {
+                list.Add(i);
+            }
+
+            return list;
+
+        }
 
 
         public List<string> Search(string targetstr)

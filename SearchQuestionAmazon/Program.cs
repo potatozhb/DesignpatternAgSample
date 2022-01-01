@@ -1,5 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
+using BenchmarkDotNet.Running;
 using SearchQuestionAmazon;
 using System.Collections;
 
@@ -86,6 +87,7 @@ class Program
             Console.WriteLine(ss);
         }
 
+        var summary = BenchmarkRunner.Run<Tries>();
 
         System.Console.WriteLine("test");
         Tries tries = new Tries();
@@ -94,6 +96,8 @@ class Program
         tries.InsertNode("moneypot");
         tries.InsertNode("monitor");
         tries.InsertNode("mousepad");
+
+        tries.YieldReturn();
 
         list = tries.Search("mo");
 

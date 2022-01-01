@@ -21,18 +21,18 @@ namespace WindowsFormsApp1
         public event EventHandler UpdateUI;
 
         private List<IObserver> myObservers;
-        private double googprice;
+        private double googleprice;
         private double facebookprice;
-        private double applprice;
+        private double appleprice;
 
         private IProgress<string> progress;
         
         public SubjectObserverPattern(IProgress<string> p)
         {
             myObservers = new List<IObserver>();
-            googprice =0;
+            googleprice =0;
             facebookprice = 0;
-            applprice = 0;
+            appleprice = 0;
 
             progress = p;
         }
@@ -55,8 +55,9 @@ namespace WindowsFormsApp1
         {
             foreach (IObserver observer in myObservers)
             {
-                observer.Update(googprice,facebookprice,applprice);
+                observer.Update(googleprice,facebookprice,appleprice);
             }
+
             List<string> log = SingletonPatternLog.ReadLog();
             string logstr = "";
             for (int i = 0; i < log.Count; i++)
@@ -67,10 +68,10 @@ namespace WindowsFormsApp1
             progress.Report(logstr) ;
         }
 
-        public void SetGooGPrice(double newprice)
+        public void SetGooglePrice(double newprice)
         {
-            SingletonPatternLog.AddLog($"Google: {googprice} => {newprice}");
-            this.googprice = newprice;
+            SingletonPatternLog.AddLog($"Google: {googleprice} => {newprice}");
+            this.googleprice = newprice;
             NotifyObserver();
         }
 
@@ -81,10 +82,10 @@ namespace WindowsFormsApp1
             NotifyObserver();
         }
 
-        public void SetAPPLPrice(double newprice)
+        public void SetApplePrice(double newprice)
         {
-            SingletonPatternLog.AddLog($"Apple : {applprice} => {newprice} ");
-            this.applprice = newprice;
+            SingletonPatternLog.AddLog($"Apple : {appleprice} => {newprice} ");
+            this.appleprice = newprice;
             NotifyObserver();
         }
 
@@ -93,14 +94,14 @@ namespace WindowsFormsApp1
     public interface IObserver
     {
         int GetObserverID();
-        void Update(double GooGprice, double Facebookprice, double APPLprice);
+        void Update(double googleprice, double facebookprice, double appleprice);
     }
 
     public class StockObserver : IObserver
     {
-        private double googprice;
+        private double googleprice;
         private double facebookprice;
-        private double applprice;
+        private double appleprice;
 
         private static int stockobserverIDtracker =0;
         private int stockobserverID;
@@ -118,11 +119,11 @@ namespace WindowsFormsApp1
         public int GetObserverID()
             { return stockobserverID; }
 
-        public void Update(double GooGprice, double Facebookprice, double APPLprice)
+        public void Update(double googleprice, double facebookprice, double appleprice)
         {
-            this.googprice = GooGprice;
-            this.facebookprice = Facebookprice;
-            this.applprice = APPLprice;
+            this.googleprice = googleprice;
+            this.facebookprice = facebookprice;
+            this.appleprice = appleprice;
 
             SingletonPatternLog.AddLog($"observer {stockobserverID} updated");
         }

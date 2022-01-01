@@ -19,7 +19,7 @@ namespace WindowsFormsApp1
         }
     }
 
-    public interface IATMmachinestate
+    public interface IATMactive
     {
         void InsertCard();
         void RejectCard();
@@ -27,7 +27,7 @@ namespace WindowsFormsApp1
         void RequestMoney(int money);
     }
 
-    public class HasCardState : IATMmachinestate
+    public class HasCardState : IATMactive
     {
         private ATMmachine mATMMachine;
 
@@ -64,7 +64,7 @@ namespace WindowsFormsApp1
         }
     }
 
-    public class NoCardState : IATMmachinestate
+    public class NoCardState : IATMactive
     {
         private ATMmachine mATMMachine;
 
@@ -95,7 +95,7 @@ namespace WindowsFormsApp1
         }
     }
 
-    public class PinRightState : IATMmachinestate
+    public class PinRightState : IATMactive
     {
         private ATMmachine mATMMachine;
 
@@ -124,7 +124,7 @@ namespace WindowsFormsApp1
         }
     }
 
-    public class NoCashState : IATMmachinestate
+    public class NoCashState : IATMactive
     {
         private ATMmachine mATMMachine;
 
@@ -153,14 +153,14 @@ namespace WindowsFormsApp1
         }
     }
 
-    public class ATMmachine
+    public class ATMmachine:IATMactive
     {
-        IATMmachinestate machineState;
+        IATMactive machineState;
 
-        IATMmachinestate hasCardState;
-        IATMmachinestate noCardState;
-        IATMmachinestate pinRightState;
-        IATMmachinestate noCashState;
+        IATMactive hasCardState;
+        IATMactive noCardState;
+        IATMactive pinRightState;
+        IATMactive noCashState;
 
         int nMaxCash = 0;
         int defaultPin = 1234;
@@ -181,7 +181,7 @@ namespace WindowsFormsApp1
             return defaultPin;
         }
 
-        public void ChangeState(IATMmachinestate newstate)
+        public void ChangeState(IATMactive newstate)
         {
             machineState = newstate;
         }
@@ -203,19 +203,19 @@ namespace WindowsFormsApp1
             machineState.RequestMoney(money);
         }
 
-        public IATMmachinestate getHasCardState()
+        public IATMactive getHasCardState()
         {
             return hasCardState;
         }
-        public IATMmachinestate getNoCardState()
+        public IATMactive getNoCardState()
         {
             return noCardState;
         }
-        public IATMmachinestate getPinRightState()
+        public IATMactive getPinRightState()
         {
             return pinRightState;
         }
-        public IATMmachinestate getNoCashState()
+        public IATMactive getNoCashState()
         {
             return noCashState;
         }

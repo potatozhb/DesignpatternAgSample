@@ -258,8 +258,8 @@ namespace WindowsFormsApp1
             for (int i = 0; i < 10; i++)
             {
                 Thread.Sleep(1000);
-                subject.SetGooGPrice(100.1 + new Random().Next(10));
-                subject.SetAPPLPrice(120.7+ new Random().Next(10));
+                subject.SetGooglePrice(100.1 + new Random().Next(10));
+                subject.SetApplePrice(120.7+ new Random().Next(10));
                 subject.SetFacebookPrice(114.3+ new Random().Next(10));
 
                 if(i==5)
@@ -415,6 +415,66 @@ namespace WindowsFormsApp1
             ObjectPattern obj7 = ObjectPoolPattern.GetObject();
             ObjectPattern obj8 = ObjectPoolPattern.GetObject();
 
+        }
+
+        private void button25_Click(object sender, EventArgs e)
+        {
+            CompositePattern compositePattern = new CompositePattern();
+            compositePattern.Run();
+        }
+
+        private void button26_Click(object sender, EventArgs e)
+        {
+            DecoratorPattern decoratorPattern = new DecoratorPattern();
+            decoratorPattern.Run();
+        }
+
+        private void button27_Click(object sender, EventArgs e)
+        {
+            FlyweightPattern flyweightPattern = new FlyweightPattern();
+            //flyweightPattern.RunFlyweight();
+            flyweightPattern.RunNormal();
+        }
+
+        private void button28_Click(object sender, EventArgs e)
+        {
+            ProxyPattern proxyPattern = new ProxyPattern();
+            proxyPattern.Drive(new Driver(18));
+            proxyPattern.Drive(new Driver(15));
+        }
+
+        private void button29_Click(object sender, EventArgs e)
+        {
+            ChainofResponsibilityPattern chain = new ChainofResponsibilityPattern();
+            chain.Run();
+        }
+
+        private void button30_Click(object sender, EventArgs e)
+        {
+            MediatorPattern mediatorPattern = new MediatorPattern();
+            mediatorPattern.Run();
+        }
+
+        private void button31_Click(object sender, EventArgs e)
+        {
+            NullObjectPattern nullObjectPattern = new NullObjectPattern();
+            nullObjectPattern.Run();
+        }
+
+        private void button32_Click(object sender, EventArgs e)
+        {
+            TemplateMethodPattern fishbuger = new FishBuger();
+            fishbuger.StartMakeBugger();
+
+            TemplateMethodPattern vegetable = new VegetableBuger();
+            vegetable.StartMakeBugger();
+
+        }
+
+        private void button33_Click(object sender, EventArgs e)
+        {
+            VisitorPattern visitorPattern = new VisitorPattern();
+            visitorPattern.Run();
         }
     }
 }

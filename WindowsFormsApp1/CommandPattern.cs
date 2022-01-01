@@ -9,34 +9,44 @@ namespace WindowsFormsApp1
     public class PlayTV
     {
         public void Play()
-        {
-           
+        {           
 
             TVDevice myTV = new TVDevice();
-            TurnTVOn _TVon = new TurnTVOn(myTV);
+            RemoteController remoteController = new RemoteController(myTV);
+            remoteController.GetOnButton.press();
+            remoteController.GetVupButton.press();
+            remoteController.GetVupButton.pressUndo();
+            remoteController.GetVupButton.press();
+            remoteController.GetVdownButton.press();
+            remoteController.GetVupButton.press();
+            remoteController.GetVupButton.press();
+            remoteController.GetVupButton.press();
+            remoteController.GetOffButton.press();
 
-            DeviceButton myButton = new DeviceButton(_TVon);
-
-            myButton.press();
-
-            TurnTVOFF _TVOff = new TurnTVOFF(myTV);
-            myButton = new DeviceButton(_TVOff);
-            myButton.press();
-
-            TurnTVVolumeUp volumeup = new TurnTVVolumeUp(myTV);
-            myButton = new DeviceButton(volumeup);
-            myButton.press();
-            myButton.press();
-            myButton.press();
-            myButton.press();
-
-            myButton.pressUndo();
-            myButton.pressUndo();
-
-            TurnTVVolumeDown volumedown = new TurnTVVolumeDown(myTV);
-            myButton = new DeviceButton(volumedown);
-            myButton.press();
         }
+    }
+
+    public class RemoteController
+    {
+        TVDevice myTV;
+        DeviceButton onButton;
+        DeviceButton offButton;
+        DeviceButton volumeUpButton;
+        DeviceButton volumeDownButton;
+
+        public RemoteController(TVDevice newTV)
+        {
+            myTV =newTV;
+            onButton = new DeviceButton(new TurnTVOn(myTV));
+            offButton = new DeviceButton(new TurnTVOFF(myTV));
+            volumeUpButton = new DeviceButton(new TurnTVVolumeUp(myTV));
+            volumeDownButton = new DeviceButton(new TurnTVVolumeDown(myTV));
+        }
+
+        public DeviceButton GetOnButton { get { return onButton; } }
+        public DeviceButton GetOffButton { get { return offButton; } }
+        public DeviceButton GetVupButton { get { return volumeUpButton; } }
+        public DeviceButton GetVdownButton { get { return volumeDownButton; } }
     }
 
     public class DeviceButton
